@@ -27,6 +27,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       unique: true
     },
+    email: DataTypes.STRING,
     password: DataTypes.STRING
   }, {
     sequelize,
@@ -37,6 +38,6 @@ module.exports = (sequelize, DataTypes) => {
     let hash = bcrypt.hashSync(user.password, salt);
     user.password = hash
   });
-  
+ 
   return User;
 };

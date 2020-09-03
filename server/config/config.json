@@ -2,6 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "r4ch1m4w4n",
+    "password": "postgres",
     "database": "music-fox",
     "host": "127.0.0.1",
     "dialect": "postgres"
