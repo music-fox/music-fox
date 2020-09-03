@@ -1,1 +1,3 @@
 # project-4
+
+## JANGAN LUPA GANTI CONFIG.JSON NYA YAA
