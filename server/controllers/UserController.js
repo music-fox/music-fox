@@ -1,5 +1,7 @@
-const { User } = require('../models')
+const { User, Music } = require('../models')
 const mail = require('../helpers/mailgun')
+const { isValid } = require('../helpers/bcrypt')
+const { tokenGenerator } = require('../helpers/jwt')
 
 class UserController {
     static async register(req, res, next) {
@@ -36,6 +38,29 @@ class UserController {
         })
         .catch(err=>{
             next(err)
+        })
+    }
+    static list (req,res,next){
+        User.findAll()
+        .then(user=>{
+            res.status(200).json(user)
+        })
+        .catch(err=>{
+            next(err)
+        })
+    }
+    static showById (req,res,next){
+        User.findOne({
+            include: [Music],
+            where:{
+                id:req.params.id
+            }
+        })
+        .then(user=>{
+            res.status(200).json(user)
+        })
+        .catch(err=>{
+            res.status(500).json(err)
         })
     }
 }
