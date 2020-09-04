@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      musicUrl: {
+      musicId: {
         type: Sequelize.STRING
       },
       createdAt: {
