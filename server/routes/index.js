@@ -18,10 +18,12 @@ route.get('/user/:id', UserController.showById)
 route.use(getSpotifyAccessToken)
 
 route.post('/music/add', SpotifyController.add)
+route.get('/test', SpotifyController.test)
 
 route.use('/', authorization)
 
 // masukin edit user dibawah sini
+route.get('/music/:id/lyrics', SpotifyController.lyrics)
 route.delete('/music/:id', SpotifyController.delete)
 
 module.exports = route

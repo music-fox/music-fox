@@ -33,7 +33,21 @@ const musxmatSearch = (track, artist) => {
     })
 }
 
+const mxmLyrics = (trackId) => {
+    let url = `http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${process.env.API_MUSICXMATCH}&track_id=${encodeURIComponent(trackId)}`
+    console.log(url);
+    return axios ({
+        method: 'get',
+        url: url
+    }).then(response => {
+        return response.data
+    }).catch(err => {
+        return err
+    })
+}
+
 module.exports = {
     spotifySearch,
-    musxmatSearch
+    musxmatSearch,
+    mxmLyrics
 }

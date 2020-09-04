@@ -1,5 +1,6 @@
 const {Music} = require('../models')
-const { spotifySearch, musxmatSearch } = require('../helpers/music')
+const { spotifySearch, musxmatSearch, mxmLyrics } = require('../helpers/music')
+const { response } = require('express')
 
 class SpotifyController {
     static async add (req, res, next) {
@@ -44,6 +45,21 @@ class SpotifyController {
             })
 
             return res.status(200).json(music)
+        } catch (err) {
+            next(err)
+        }
+    }
+
+    static async lyrics (req, res, next) {
+        try {
+            let music = await Music.findOne({
+                where: {
+                    id: req.params.id
+                }
+            })
+
+            console.log(music);
+            mxmLyrics()
         } catch (err) {
             next(err)
         }
