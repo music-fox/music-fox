@@ -8,6 +8,7 @@ route.post('/register', UserController.register)
 route.post('/login', UserController.login)
 route.get('/user', UserController.list)
 route.get('/user/:id', UserController.showById)
+route.post('/googleLogin', UserController.googleLogin)
 
 route.get('/', IndexController.home)
 

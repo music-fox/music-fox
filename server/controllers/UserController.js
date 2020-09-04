@@ -2,6 +2,7 @@ const { User, Music } = require('../models')
 const mail = require('../helpers/mailgun')
 const { isValid } = require('../helpers/bcrypt')
 const { tokenGenerator } = require('../helpers/jwt')
+const {OAuth2Client} = require('google-auth-library')
 
 class UserController {
     static async register(req, res, next) {
@@ -38,6 +39,42 @@ class UserController {
         })
         .catch(err=>{
             next(err)
+        })
+    }
+    static googleLogin (req,res,next){
+        const client = new OAuth2Client(process.env.CLIENT_ID)
+        const {google_access_token} = req.headers
+        let email_google
+        client.verifyIdToken({
+            idToken: google_access_token,
+            audience: process.env.CLIENT_ID
+        })
+        .then(ticket => {
+            return ticket.getPayload()
+        })
+        .then(payload => {
+            email_google = payload.email
+            return User.findOne({where:{email:payload.email}})
+        })
+        .then(user=>{
+            if(!user){
+                return User.create({
+                    email: email_google,
+                    password: 'password'
+                })
+            }else{
+                return user
+            }
+        })
+        .then(user=>{
+            const payload = {email:user.email, id: user.id}
+            const access_token = tokenGenerator(payload)
+
+            return res.status(200).json({access_token})
+        })
+        .catch(err=>{
+            next(err)
+            console.log(err)
         })
     }
     static list (req,res,next){
