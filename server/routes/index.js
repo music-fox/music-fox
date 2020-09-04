@@ -18,7 +18,6 @@ route.get('/user/:id', UserController.showById)
 route.use(getSpotifyAccessToken)
 
 route.post('/music/add', SpotifyController.add)
-route.get('/test', SpotifyController.test)
 
 route.use('/', authorization)
 
