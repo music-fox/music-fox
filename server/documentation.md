@@ -2,6 +2,8 @@
 Music-Fox App is an application to listen your favourite song. This app has : 
 * Register dan Login
 * Show User with their Music
+* Add User's music
+* Delete User's music
 * JSON formatted response
 
 &nbsp;
@@ -13,6 +15,8 @@ Music-Fox App is an application to listen your favourite song. This app has :
 - POST /googleLogin
 - GET /user
 - GET /user:id
+- POST /music/add
+- DELETE /music/:id
 
 ```
 
@@ -194,3 +198,65 @@ _Response (400 - Bad Request)_
 ```
 
 ---
+
+### POST /music/add
+
+> Add your favourite music
+
+_Request Header_
+```json
+{
+  "access_token": "<your access token>"
+}
+```
+
+_Request Body_
+```json
+{
+  "musicUrl": ''
+}
+```
+
+_Response (200)_
+```json
+{
+    "Music":[]
+}
+```
+
+_Response (500 - Internal Server Error)_
+```json
+{
+  "message": "Internal Server Error"
+}
+```
+
+### DELETE /music/id
+
+> Delete your music
+
+_Request Header_
+```json
+{
+  "access_token": "<your access token>"
+}
+```
+
+_Request Body_
+```
+not needed
+```
+
+_Response (200)_
+```json
+{
+    "Message": "Music success deleted"
+}
+```
+
+_Response (500 - Internal Server Error)_
+```json
+{
+  "message": "Internal Server Error"
+}
+```
