@@ -1,0 +1,24 @@
+.form-auth {
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0px 0px 23px 4px rgba(168,168,168,0.78);
+    margin: auto;
+}
+
+.form-auth .btn-sign {
+    background-color: #DB55FF;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.form-auth .btn-sign:hover {
+    color: whitesmoke;
+}
+
+.form-side {
+    display: flex;
+}
+
+.btn-google {
+    background: url('https://developers-dot-devsite-v2-prod.appspot.com/identity/sign-in/g-normal.png') transparent 5px 50% no-repeat;
+}
