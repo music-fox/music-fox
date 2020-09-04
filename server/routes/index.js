@@ -13,6 +13,7 @@ route.get('/', IndexController.home)
 
 route.use(getSpotifyAccessToken)
 
-route.post('/add', SpotifyController.add)
+route.post('/music/add', SpotifyController.add)
+route.delete('/music/:id', SpotifyController.delete)
 
 module.exports = route
