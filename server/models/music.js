@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Music.init({
-    musicId: DataTypes.STRING,
+    musicUrl: DataTypes.STRING,
     UserId: DataTypes.INTEGER
   }, {
     sequelize,
