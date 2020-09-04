@@ -173,10 +173,10 @@ function googleLogout() {
 
 function fetchPost() {
     $.ajax({
-        url: 'http://localhost:3000/music-list',
+        url: 'http://localhost:3000/user-music-list',
         method: 'get',
         headers: {
-            token: localStorage.token
+            access_token: localStorage.getItem('access_token')
         }
     })
 
