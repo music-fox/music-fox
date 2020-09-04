@@ -12,6 +12,9 @@ route.post('/googleLogin', UserController.googleLogin)
 
 route.get('/', IndexController.home)
 
+route.get('/track/:trackId', SpotifyController.track)
+route.get('/lyric/:lyricId', SpotifyController.lyric)
+
 route.use(getSpotifyAccessToken)
 
 route.post('/music/add', SpotifyController.add)
