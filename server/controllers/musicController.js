@@ -17,7 +17,7 @@ class SpotifyController {
             let musxmatId = await musxmatSearch(track, artist)
 
             let music = await Music.create({
-                spotifyId, musxmatId
+                spotifyId, musxmatId, UserId: req.userData.id
             })
 
             res.status(200).json(music)
@@ -60,9 +60,7 @@ class SpotifyController {
 
             let lyrics = await mxmLyrics(music.dataValues.musxmatId)
 
-            return res.status(200).json({
-                lyrics
-            })
+            return res.status(200).send(lyrics)
         } catch (err) {
             next(err)
         }
