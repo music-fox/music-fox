@@ -58,8 +58,11 @@ class SpotifyController {
                 }
             })
 
-            console.log(music);
-            mxmLyrics()
+            let lyrics = mxmLyrics(music.dataValues.musxmatId)
+
+            return res.status(200).json({
+                lyrics
+            })
         } catch (err) {
             next(err)
         }

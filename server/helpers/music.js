@@ -34,13 +34,13 @@ const musxmatSearch = (track, artist) => {
 }
 
 const mxmLyrics = (trackId) => {
-    let url = `http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${process.env.API_MUSICXMATCH}&track_id=${encodeURIComponent(trackId)}`
-    console.log(url);
+    let url = `http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=${process.env.API_MUSICXMATCH}&track_id=${trackId}`
     return axios ({
         method: 'get',
         url: url
     }).then(response => {
-        return response.data
+        console.log(response.data.message.body);
+        return response.data.message.body.lyrics_body
     }).catch(err => {
         return err
     })

@@ -19,10 +19,9 @@ route.use(getSpotifyAccessToken)
 
 route.post('/music/add', SpotifyController.add)
 
-route.use('/', authorization)
 
 // masukin edit user dibawah sini
-route.get('/music/:id/lyrics', SpotifyController.lyrics)
-route.delete('/music/:id', SpotifyController.delete)
+route.get('/music/:id/lyrics', authorization, SpotifyController.lyrics)
+route.delete('/music/:id', authorization, SpotifyController.delete)
 
 module.exports = route
