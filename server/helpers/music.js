@@ -39,8 +39,8 @@ const mxmLyrics = (trackId) => {
         method: 'get',
         url: url
     }).then(response => {
-        console.log(response.data.message.body);
-        return response.data.message.body.lyrics_body
+        console.log(response.data.message.body.lyrics.lyrics_body);
+        return response.data.message.body.lyrics.lyrics_body
     }).catch(err => {
         return err
     })

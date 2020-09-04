@@ -58,7 +58,7 @@ class SpotifyController {
                 }
             })
 
-            let lyrics = mxmLyrics(music.dataValues.musxmatId)
+            let lyrics = await mxmLyrics(music.dataValues.musxmatId)
 
             return res.status(200).json({
                 lyrics
