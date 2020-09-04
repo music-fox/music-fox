@@ -12,10 +12,10 @@
 </head>
 
 <body>
-  <nav class="navbar">
-            <!-- navbar -->
-            <a class="navbar-brand" href="#"><img src="src/assets/origami.png"></a>
-        </nav>
+    <!-- <nav class="navbar"> -->
+    <!-- navbar -->
+    <!-- <a class="navbar-brand" href="#"><img src="src/assets/origami.png"></a> -->
+    <!-- </nav> -->
     <section id="auth-page" class="section">
         <div class="container is-fluid">
             <div class="columns is-desktop">
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" class="button btn-sign is-medium is-fullwidth">Sign In</button>
+                                <button type="submit" class="button btn-sign is-medium is-fullwidth">Sign Up</button>
                                 <button class="button btn-google is-medium is-fullwidth mt-2">
                                     <span class="icon">
                                         <i class="icon-google"></i>
@@ -110,49 +110,41 @@
     </section>
 
     <section id="dashboard" class="section">
-        <div class="container">
-            <h1 class="title">Section</h1>
-            <h2 class="subtitle">
-                A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
-            </h2>
-            <a id="logout">logout</a>
+        <div class="container is-fluid">
+            <div class="user">
+                <!-- user info ini nanti dari mana? -->
+                <center><button class="btn"> add music +
+                        <!-- add button + --></button></center>
+            </div>
+            <div class="post-container2">
+                <h2>your song list</h2>
+                <!-- embedded song -->
+                <div class="columns" id="post-container">
+                </div>
+            </div>
         </div>
     </section>
-    <div class="section">
-            <div class="container is-fluid">
-                <div class="user">
-                    <!-- user info ini nanti dari mana? -->
-                    <center><button class="btn"> add music +<!-- add button + --></button></center>
-                </div>
-                <div class="post-container2">
-                    <h2>your song list</h2>
-                    <!-- embedded song -->
-                    <div class="columns" id="post-container">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="section">
-            <div class='container is-fluid'>
-                <form id="add-content">
-                        <div class="container form-container">
-                            <div class="field">
-                                <label for="" class="label">Title</label>
-                                <div class="control has-icons-left has-icons-right">
-                                    <input class="input" name="title" type="text" id="title" required />
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label for="password-signin" class="label">artist</label>
-                                <div class="control has-icons-left has-icons-right">
-                                    <input class="input" name="artist" type="text" id="artist" required />
-                                </div>
-                            </div>
-                            <button type="submit" class="button is-medium is-fullwidth">add</button>
+    <!-- <div class="section">
+        <div class='container is-fluid'>
+            <form id="add-content">
+                <div class="container form-container">
+                    <div class="field">
+                        <label for="" class="label">Title</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" name="title" type="text" id="title" required />
                         </div>
-                </form>
-            </div>
+                    </div>
+                    <div class="field">
+                        <label for="password-signin" class="label">artist</label>
+                        <div class="control has-icons-left has-icons-right">
+                            <input class="input" name="artist" type="text" id="artist" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="button is-medium is-fullwidth">add</button>
+                </div>
+            </form>
         </div>
+    </div> -->
 
     <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
