@@ -90,7 +90,7 @@ class UserController {
         User.findOne({
             include: [Music],
             where:{
-                id:req.params.id
+                id: req.userData.id
             }
         })
         .then(user=>{
