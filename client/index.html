@@ -110,6 +110,29 @@
     </section>
 
     <section id="dashboard" class="section">
+        <nav class="navbar is-fixed-top is-light" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    <img src="./src/assets/origami.png" width="35px" />
+                </a>
+
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <button id="logout" class="button is-danger is-outlined">Log out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
         <div class="container is-fluid">
             <div class="user">
                 <!-- user info ini nanti dari mana? -->
@@ -117,7 +140,7 @@
                         <!-- add button + --></button></center>
             </div>
             <div class="post-container2">
-                <h2>your song list</h2>
+                <h1 class="title">Your favorite song list</h1>
                 <!-- embedded song -->
                 <div class="columns" id="post-container">
                 </div>
