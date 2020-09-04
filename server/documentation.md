@@ -1,4 +1,4 @@
-# Fancy Todo App Server
+# Music Fox
 Music-Fox App is an application to listen your favourite song. This app has : 
 * Register dan Login
 * Show User with their Music
