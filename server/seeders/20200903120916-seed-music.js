@@ -15,12 +15,12 @@ module.exports = {
      "Music",
      [
        {
-         musicUrl: `<iframe src="https://open.spotify.com/embed/track/4ecVWqbtW6phQGpZMAyqIU" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`,
+         musicUrl: `https://open.spotify.com/embed/track/4ecVWqbtW6phQGpZMAyqIU`,
          createdAt: new Date(),
          updatedAt: new Date()
        },
        {
-        musicUrl: `<iframe src="https://open.spotify.com/embed/track/6TqXcAFInzjp0bODyvrWEq" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>`,
+        musicUrl: `https://open.spotify.com/embed/track/6TqXcAFInzjp0bODyvrWEq`,
         createdAt: new Date(),
         updatedAt: new Date()
       },
