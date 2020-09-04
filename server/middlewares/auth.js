@@ -1,5 +1,5 @@
 const {verifyToken} = require('../helpers/jwt')
-const {User, Task} = require('../models')
+const {User, Music} = require('../models')
 
 const authentication = async (req, res, next) => {
     try{
@@ -8,7 +8,7 @@ const authentication = async (req, res, next) => {
         let userData = verifyToken(access_token)
         let user = await User.findOne({
             where:{
-                username: userData.username
+                email: userData.email
             }
         })
 
@@ -27,13 +27,13 @@ const authentication = async (req, res, next) => {
 const authorization = async (req, res, next) => {
     try {
         console.log('Authorizing...');
-        const task = await Task.findByPk(req.params.id)
+        const music = await Music.findByPk(req.params.id)
 
-        if (!task) {
+        if (!music) {
             throw {message: 'Not found', statusCode: 404}
         }
 
-        if (task.UserId == req.userData.id) {
+        if (music.UserId == req.userData.id) {
             console.log('authorization accepted.');
             next()
         } else {
