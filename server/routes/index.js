@@ -10,16 +10,18 @@ route.post('/register', UserController.register)
 route.post('/login', UserController.login)
 route.post('/googleLogin', UserController.googleLogin)
 
+route.use(authentication)
 
-route.get('/user',authentication, UserController.list)
-route.get('/user/:id',authentication, UserController.showById)
-
-route.get('/track/:trackId', SpotifyController.track)
-route.get('/lyric/:lyricId', SpotifyController.lyric)
+route.get('/user', UserController.list)
+route.get('/user/:id', UserController.showById)
 
 route.use(getSpotifyAccessToken)
 
-route.post('/music/add', authorization, SpotifyController.add)
-route.delete('/music/:id', authorization, SpotifyController.delete)
+route.post('/music/add', SpotifyController.add)
+
+route.use('/', authorization)
+
+// masukin edit user dibawah sini
+route.delete('/music/:id', SpotifyController.delete)
 
 module.exports = route

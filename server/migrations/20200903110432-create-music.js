@@ -8,7 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      musicId: {
+      spotifyId: {
+        type: Sequelize.STRING
+      },
+      musxmatId: {
         type: Sequelize.STRING
       },
       createdAt: {

@@ -21,7 +21,6 @@
     "jsonwebtoken": "^8.5.1",
     "mailgun-js": "^0.22.0",
     "pg": "^8.3.3",
-    "sequelize": "^6.3.5",
-    "spotify-web-api-node": "^4.0.0"
+    "sequelize": "^6.3.5"
   }
 }
