@@ -42,7 +42,7 @@ class UserController {
         })
     }
     static googleLogin (req,res,next){
-        const client = new OAuth2Client(process.env.CLIENT_ID)
+        const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID)
         const {google_access_token} = req.headers
         let email_google
         client.verifyIdToken({
