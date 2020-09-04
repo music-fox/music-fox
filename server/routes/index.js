@@ -2,7 +2,7 @@ const route = require('express').Router()
 const UserController = require('../controllers/UserController')
 const IndexController = require('../controllers/indexController')
 const SpotifyController = require('../controllers/musicController')
-const {getSpotifyAccessToken} = require('../middlewares/spotify')
+const { getSpotifyAccessToken } = require('../middlewares/spotify')
 const { authentication, authorization } = require('../middlewares/auth')
 
 route.get('/', IndexController.home)
@@ -13,7 +13,7 @@ route.post('/googleLogin', UserController.googleLogin)
 route.use(authentication)
 
 route.get('/user', UserController.list)
-route.get('/user/:id', UserController.showById)
+route.get('/user-music-list', UserController.showById)
 
 route.use(getSpotifyAccessToken)
 

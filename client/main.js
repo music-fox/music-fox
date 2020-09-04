@@ -1,16 +1,16 @@
 
-function fetchPost(){
+function fetchPost() {
     $.ajax({
-        url: 'http://localhost:3000/musiclist',
+        url: 'http://localhost:3000/user-music-list',
         method: 'get',
         headers: {
             token: localStorage.token
         }
     })
 
-    .done(data =>{
-        data.forEach(element => {
-            $('#post-container').append(`
+        .done(data => {
+            data.forEach(element => {
+                $('#post-container').append(`
             <div class="column">
                 <div class="card">
                     <div class="card-content">
@@ -24,12 +24,12 @@ function fetchPost(){
                     </footer>
                 </div>
             </div>`)
-        });
-    })
+            });
+        })
     //console.log(data)
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     fetchPost()
-    
+
 })
