@@ -12,6 +12,10 @@
 </head>
 
 <body>
+  <nav class="navbar">
+            <!-- navbar -->
+            <a class="navbar-brand" href="#"><img src="src/assets/origami.png"></a>
+        </nav>
     <section id="auth-page" class="section">
         <div class="container is-fluid">
             <div class="columns is-desktop">
@@ -114,6 +118,41 @@
             <a id="logout">logout</a>
         </div>
     </section>
+    <div class="section">
+            <div class="container is-fluid">
+                <div class="user">
+                    <!-- user info ini nanti dari mana? -->
+                    <center><button class="btn"> add music +<!-- add button + --></button></center>
+                </div>
+                <div class="post-container2">
+                    <h2>your song list</h2>
+                    <!-- embedded song -->
+                    <div class="columns" id="post-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class='container is-fluid'>
+                <form id="add-content">
+                        <div class="container form-container">
+                            <div class="field">
+                                <label for="" class="label">Title</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" name="title" type="text" id="title" required />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="password-signin" class="label">artist</label>
+                                <div class="control has-icons-left has-icons-right">
+                                    <input class="input" name="artist" type="text" id="artist" required />
+                                </div>
+                            </div>
+                            <button type="submit" class="button is-medium is-fullwidth">add</button>
+                        </div>
+                </form>
+            </div>
+        </div>
 
     <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>

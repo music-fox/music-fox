@@ -1,3 +1,15 @@
+nav img{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.music-list{
+    top: 70%;
+}
+
+.btn{
+    margin-bottom: 30px;
+}
 .form-auth {
     border-radius: 20px;
     padding: 50px;
